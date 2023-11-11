@@ -19,6 +19,12 @@
 
 #define HISTORY_FILE	".simple_shell_history"
 #define HISTORY_MAXIMUM	4096
+
+#define NORM_COMMD	0
+#define OR_COMMD	1
+#define AND_COMMD	2
+#define CHAIN_COMMD	3
+
 /**
  * struct stringlist - singly linked list
  *
@@ -166,5 +172,17 @@ int alias_printing(list_type *n);
 
 int alias_setting(info_type *inf, char *s);
 int alias_unsetting(info_type *inf, char *s);
+
+char *path_finding(info_type *inf, char *path, char *commd);
+int is_commd(info_type *inf, char *p);
+char *charsDuplicate(char *path, int star, int stp);
+
+
+void check_multicommand(info_type *inf, char *buff,
+                size_t *ptr, size_t index, size_t len);
+int is_multicommand(info_type *inf, char *buff, size_t *ptr);
+int alias_replacement(info_type *inf);
+int variable_replacement(info_type *inf);
+int string_replacement(char **first, char *last);
 
 #endif
