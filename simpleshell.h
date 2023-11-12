@@ -25,6 +25,8 @@
 #define AND_COMMD	2
 #define CHAIN_COMMD	3
 
+#define GET_LINE 0
+#define STR_TOK 0
 /**
  * struct stringlist - singly linked list
  *
@@ -41,7 +43,6 @@ typedef struct stringlist
 	struct stringlist *next;
 
 } list_type;
-
 
 /**
  * struct info - contain paseudo args
@@ -86,6 +87,20 @@ typedef struct info
 	int readfd;
 	int histc;
 } info_type;
+
+/**
+ * struct builtinStruct - builtin string and function
+ *
+ * @t: type
+ *
+ * @f: function
+*/
+
+typedef struct builtinStruct
+{
+	char *t;
+	int (*f)(info_type *);
+} builtin_struct;
 
 #define INFO_INITIATE \
 {NULL, NULL, NULL, 0, 0, 0,\
@@ -179,10 +194,19 @@ char *charsDuplicate(char *path, int star, int stp);
 
 
 void check_multicommand(info_type *inf, char *buff,
-                size_t *ptr, size_t index, size_t len);
+		size_t *ptr, size_t index, size_t len);
 int is_multicommand(info_type *inf, char *buff, size_t *ptr);
 int alias_replacement(info_type *inf);
 int variable_replacement(info_type *inf);
 int string_replacement(char **first, char *last);
+
+void signal_handling(__attribute__((unused))int num);
+int _getline(info_type *inf, char **p, size_t *len);
+
+ssize_t buffer_reading(info_type *inf, char *buffer, size_t *size);
+ssize_t buffer_input(info_type *inf, char **buffer, size_t *l);
+ssize_t gettinginput(info_type *inf);
+
+void forkk(info_type *inf);
 
 #endif
