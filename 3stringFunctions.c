@@ -43,4 +43,24 @@ char *_strcopy(char *destination, char *source)
 	destination[y] = 0;
 	return (destination);
 }
+/**
+ * _strconcat - concatenates strings
+ *
+ * @destination: destination buffer
+ *
+ * @source: source buffer
+ *
+ * Return: pointer
+*/
+char *_strconcat(char *destination, char *source)
+{
+	char *y = destination;
+
+	while (*destination)
+		destination++;
+	while (*source)
+		*destination++ = *source++;
+	*destination = *source;
+	return (y);
+}
 

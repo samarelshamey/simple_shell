@@ -1,13 +1,13 @@
 #include "simpleshell.h"
 
 /**
- * environ - print current environment
+ * environment - print current environment
  *
  * @inf: information
  *
  * Return: integer
 */
-int environ(info_type *inf)
+int environment(info_type *inf)
 {
 	list_printing_string(inf->env);
 	return (0);

@@ -12,8 +12,8 @@
 #include <fcntl.h>
 #include <string.h>
 
-#define BUFF_FLUSH -1
-#define BUFF_SIZE 1024
+#define BUFF_FLUSH	-1
+#define BUFF_SIZE	1024
 #define LOWERCASE_CONVERT	1
 #define UNSIGNED_CONVERT	2
 
@@ -25,8 +25,11 @@
 #define AND_COMMD	2
 #define CHAIN_COMMD	3
 
+extern char **environ;
+
 #define GET_LINE 0
 #define STR_TOK 0
+
 /**
  * struct stringlist - singly linked list
  *
@@ -48,44 +51,44 @@ typedef struct stringlist
  * struct info - contain paseudo args
  *
  * @argument:  arguements
+ * @histc: history count
  * @argv: array of strings
+ * @readfd: fd from to read input
  * @p: a string path
  * @argc: argument count
+ * @commd_buf_type: type ||, &&, ;
  * @err_count: error count
  * @errn: error code for exits
+ * @status: status of executed command
+ * @commd_buff:  command buffer
  * @linecount_f: count this line of input
+ * @changed_env: when environ changed
  * @fname: filename
  * @env: environ
  * @environ: copy of environ
  * @history: history node
  * @alias: alias node
- * @changed_env: when environ changed
- * @status: status of executed command
- * @commd_buff:  command buffer
- * @commd_buf_type: type ||, &&, ;
- * @readfd: fd from to read input
- * @histc: history count
  */
 typedef struct info
 {
 	char *argument;
+	int histc;
 	char **argv;
+	int readfd;
 	char *p;
 	int argc;
+	int commd_buf_type;
 	unsigned int err_count;
 	int errn;
-	int linecount_f;
-	char *fname;
-	list_type *env;
-	list_type *history;
-	list_type *alias;
-	char **environ;
-	int changed_env;
 	int status;
 	char **commd_buff;
-	int commd_buf_type;
-	int readfd;
-	int histc;
+	int linecount_f;
+	int changed_env;
+	char *fname;
+	list_type *env;
+	char **environ;
+	list_type *history;
+	list_type *alias;
 } info_type;
 
 /**
@@ -103,8 +106,8 @@ typedef struct builtinStruct
 } builtin_struct;
 
 #define INFO_INITIATE \
-{NULL, NULL, NULL, 0, 0, 0,\
-	0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0}
+{NULL, 0, NULL, 0, NULL, 0,\
+	0, 0, 0, 0, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL}
 
 int _strlength(char *s);
 int _strcompare(char *s1, char *s2);
@@ -164,7 +167,7 @@ int myunsetting_environ(info_type *inf);
 int mysetting_environ(info_type *inf);
 int unsetting_environ(info_type *inf, char *v);
 int setting_environ(info_type *inf, char *v, char *val);
-int environ(info_type *inf);
+int environment(info_type *inf);
 
 char **getting_environ(info_type *inf);
 int environ_list_occupy(info_type *inf);

@@ -13,7 +13,7 @@ int builtin_finding(info_type *inf)
 		{"alias", aliasfunc},
 		{"exit", exitfunc},
 		{"cd", change_directory},
-		{"env", environ},
+		{"env", environment},
 		{"setenv", mysetting_environ},
 		{"unsetenv", myunsetting_environ},
 		{"help", helpfunc},
