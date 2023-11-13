@@ -208,5 +208,8 @@ ssize_t buffer_input(info_type *inf, char **buffer, size_t *l);
 ssize_t gettinginput(info_type *inf);
 
 void forkk(info_type *inf);
+int shell_loop(info_type *inf, char **argv);
+int builtin_finding(info_type *inf);
+void command_finding(info_type *inf);
 
 #endif
