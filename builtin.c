@@ -16,7 +16,7 @@ int exitfunc(info_type *inf)
 		if (exit == -1)
 		{
 			inf->status = 2;
-			error_printing(inf, "invalid number: ");
+			error_printing(inf, "Illegal number: ");
 			_errputs(inf->argv[1]);
 			_errputchar('\n');
 			return (1);

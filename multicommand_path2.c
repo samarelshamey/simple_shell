@@ -22,6 +22,9 @@ int alias_replacement(info_type *inf)
 		ptr = _stringcharacter(node->s, '=');
 		if (!ptr)
 			return (0);
+		ptr = _strduplicate(ptr + 1);
+		if (!ptr)
+			return (0);
 		inf->argv[0] = ptr;
 	}
 	return (1);

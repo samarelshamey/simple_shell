@@ -28,7 +28,6 @@
 #define GET_LINE 0
 #define STR_TOK 0
 
-extern char **environ;
 /**
  * struct stringlist - singly linked list
  *
