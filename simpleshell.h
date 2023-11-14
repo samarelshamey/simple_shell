@@ -25,11 +25,10 @@
 #define AND_COMMD	2
 #define CHAIN_COMMD	3
 
-extern char **environ;
-
 #define GET_LINE 0
 #define STR_TOK 0
 
+extern char **environ;
 /**
  * struct stringlist - singly linked list
  *
@@ -39,10 +38,11 @@ extern char **environ;
  *
  * @next: points to the next node
 */
+
 typedef struct stringlist
 {
-	int n;
 	char *s;
+	int n;
 	struct stringlist *next;
 
 } list_type;
@@ -195,7 +195,6 @@ char *path_finding(info_type *inf, char *path, char *commd);
 int is_commd(info_type *inf, char *p);
 char *charsDuplicate(char *path, int star, int stp);
 
-
 void check_multicommand(info_type *inf, char *buff,
 		size_t *ptr, size_t index, size_t len);
 int is_multicommand(info_type *inf, char *buff, size_t *ptr);
@@ -205,6 +204,7 @@ int string_replacement(char **first, char *last);
 
 void signal_handling(__attribute__((unused))int num);
 int _getline(info_type *inf, char **p, size_t *len);
+ssize_t gettinginput(info_type *inf);
 
 ssize_t buffer_reading(info_type *inf, char *buffer, size_t *size);
 ssize_t buffer_input(info_type *inf, char **buffer, size_t *l);
