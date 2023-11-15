@@ -69,7 +69,7 @@ void command_finding(info_type *inf)
 		else if (*(inf->argument) != '\n')
 		{
 			inf->status = 127;
-			error_printing(inf, "Command not found\n");
+			error_printing(inf, "not found\n");
 		}
 	}
 }
