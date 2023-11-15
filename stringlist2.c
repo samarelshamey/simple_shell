@@ -163,5 +163,5 @@ size_t list_printing_string(const list_type *head)
 		head = head->next;
 		ind++;
 	}
-	return (ind)
+	return (ind);
 }
