@@ -12,9 +12,9 @@
 int fd_put(char ch, int fd)
 {
 	static int y;
-	static char buffer[BUFF_SIZE];
+	static char buffer[BUFF_SIZE_W];
 
-	if (ch == BUFF_FLUSH || y >= BUFF_SIZE)
+	if (ch == BUFF_FLUSH || y >= BUFF_SIZE_W)
 	{
 		write(fd, buffer, y);
 		y = 0;
@@ -40,7 +40,7 @@ int fd_puts(char *s, int fd)
 		return (0);
 	while (*s)
 	{
-		y += fd_put(*s, fd);
+		y += fd_put(*s++, fd);
 	}
 	return (y);
 }

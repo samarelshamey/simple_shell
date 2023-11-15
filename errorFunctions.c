@@ -11,9 +11,9 @@
 int _errputchar(char ch)
 {
 	static int y;
-	static char buffer[BUFF_SIZE];
+	static char buffer[BUFF_SIZE_W];
 
-	if (ch == BUFF_FLUSH || y >= BUFF_SIZE)
+	if (ch == BUFF_FLUSH || y >= BUFF_SIZE_W)
 	{
 		write(2, buffer, y);
 		y = 0;

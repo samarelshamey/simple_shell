@@ -13,7 +13,8 @@
 #include <string.h>
 
 #define BUFF_FLUSH	-1
-#define BUFF_SIZE	1024
+#define BUFF_SIZE_R	1024
+#define BUFF_SIZE_W     1024
 #define LOWERCASE_CONVERT	1
 #define UNSIGNED_CONVERT	2
 
