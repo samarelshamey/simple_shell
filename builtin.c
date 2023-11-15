@@ -16,7 +16,7 @@ int exitfunc(info_type *inf)
 		if (exit == -1)
 		{
 			inf->status = 2;
-			error_printing(inf, "Invalid number: ");
+			error_printing(inf, "Illegal number: ");
 			_errputs(inf->argv[1]);
 			_errputchar('\n');
 			return (1);
@@ -53,7 +53,7 @@ int change_directory(info_type *inf)
 
 	s = getcwd(buff, 1024);
 	if (!s)
-		_puts("getcwd failure\n");
+		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!inf->argv[1])
 	{
 		direct = getting_environ_value(inf, "HOME=");
