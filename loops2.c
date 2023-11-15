@@ -14,7 +14,7 @@ void forkk(info_type *inf)
 	child = fork();
 	if (child == -1)
 	{
-		perror("ERROR:");
+		perror("Error:");
 		return;
 	}
 	if (child == 0)

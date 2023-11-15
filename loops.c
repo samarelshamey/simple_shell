@@ -42,7 +42,7 @@ int builtin_finding(info_type *inf)
 void command_finding(info_type *inf)
 {
 	int y, j;
-	char *p = NULL;
+	char *pa = NULL;
 
 	inf->p = inf->argv[0];
 	if (inf->linecount_f == 1)
@@ -55,10 +55,10 @@ void command_finding(info_type *inf)
 			j++;
 	if (!j)
 		return;
-	p = path_finding(inf, getting_environ_value(inf, "PATH+"), inf->argv[0]);
-	if (p)
+	pa = path_finding(inf, getting_environ_value(inf, "PATH="), inf->argv[0]);
+	if (pa)
 	{
-		inf->p = p;
+		inf->p = pa;
 		forkk(inf);
 	}
 	else
