@@ -63,17 +63,17 @@ void info_freeing(info_type *inf, int total)
 	inf->p = NULL;
 	if (total)
 	{
-		if (inf->env)
-			freeing_list(&(inf->env));
-		if (inf->alias)
-			freeing_list(&(inf->alias));
 		if (!inf->commd_buff)
 			free(inf->argument);
+		if (inf->env)
+			freeing_list(&(inf->env));
 		if (inf->history)
 			freeing_list(&(inf->history));
-		freepointer((void **)inf->commd_buff);
+		if (inf->alias)
+			freeing_list(&(inf->alias));
 		freestring(inf->environ);
 		inf->environ = NULL;
+		freepointer((void **)inf->commd_buff);
 		if (inf->readfd > 2)
 			close(inf->readfd);
 		_putchar(BUFF_FLUSH);
