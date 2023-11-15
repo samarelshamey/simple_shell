@@ -92,6 +92,10 @@ typedef struct info
 	list_type *alias;
 } info_type;
 
+#define INFO_INITIATE \
+{NULL, 0, NULL, 0, NULL, 0,\
+	        0, 0, 0, 0, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL}
+
 /**
  * struct builtinStruct - builtin string and function
  *
@@ -105,10 +109,6 @@ typedef struct builtinStruct
 	char *t;
 	int (*f)(info_type *);
 } builtin_struct;
-
-#define INFO_INITIATE \
-{NULL, 0, NULL, 0, NULL, 0,\
-	0, 0, 0, 0, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL}
 
 int _strlength(char *s);
 int _strcompare(char *s1, char *s2);

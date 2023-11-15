@@ -53,17 +53,17 @@ int is_multicommand(info_type *inf, char *buff, size_t *ptr)
 {
 	size_t x = *ptr;
 
-	if (buff[x] == '&' && buff[x + 1] == '&')
-	{
-		buff[x] = 0;
-		x++;
-		inf->commd_buf_type = AND_COMMD;
-	}
-	else if (buff[x] == '|' && buff[x + 1] == '|')
+	if (buff[x] == '|' && buff[x + 1] == '|')
 	{
 		buff[x] = 0;
 		x++;
 		inf->commd_buf_type = OR_COMMD;
+	}
+	else if (buff[x] == '&' && buff[x + 1] == '&')
+	{
+		buff[x] = 0;
+		x++;
+		inf->commd_buf_type = AND_COMMD;
 	}
 	else if (buff[x] == ';')
 	{

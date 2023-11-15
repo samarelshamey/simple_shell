@@ -53,7 +53,7 @@ int change_directory(info_type *inf)
 
 	s = getcwd(buff, 1024);
 	if (!s)
-		_puts("getcwd error\n");
+		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!inf->argv[1])
 	{
 		direct = getting_environ_value(inf, "HOME=");
@@ -77,7 +77,7 @@ int change_directory(info_type *inf)
 		cd = chdir(inf->argv[1]);
 	if (cd == -1)
 	{
-		error_printing(inf, "unable to cd to ");
+		error_printing(inf, "can't cd to ");
 		_errputs(inf->argv[1]), _errputchar('\n');
 	}
 	else
