@@ -10,14 +10,14 @@
 int builtin_finding(info_type *inf)
 {
 	builtin_struct builtins[] = {
-		{"alias", aliasfunc},
 		{"exit", exitfunc},
-		{"cd", change_directory},
 		{"env", environment},
-		{"setenv", mysetting_environ},
-		{"unsetenv", myunsetting_environ},
 		{"help", helpfunc},
 		{"history", shell_history},
+		{"setenv", mysetting_environ},
+		{"unsetenv", myunsetting_environ},
+		{"cd", change_directory},
+		{"alias", aliasfunc},
 		{NULL, NULL}
 	};
 	int y, builtin = -1;
@@ -69,7 +69,7 @@ void command_finding(info_type *inf)
 		else if (*(inf->argument) != '\n')
 		{
 			inf->status = 127;
-			error_printing(inf, "command not found\n");
+			error_printing(inf, "not found\n");
 		}
 	}
 }
