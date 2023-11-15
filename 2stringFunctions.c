@@ -88,4 +88,3 @@ char *_strduplicate(const char *string)
 		x[len] = *--string;
 	return (x);
 }
-

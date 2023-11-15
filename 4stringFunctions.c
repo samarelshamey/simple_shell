@@ -30,9 +30,9 @@ void _puts(char *string)
 int _putchar(char ch)
 {
 	static int h;
-	static char buffer[BUFF_SIZE];
+	static char buffer[BUFF_SIZE_W];
 
-	if (ch == BUFF_FLUSH || h >= BUFF_SIZE)
+	if (ch == BUFF_FLUSH || h >= BUFF_SIZE_W)
 	{
 		write(1, buffer, h);
 		h = 0;
@@ -41,6 +41,3 @@ int _putchar(char ch)
 		buffer[h++] = ch;
 	return (1);
 }
-
-
-

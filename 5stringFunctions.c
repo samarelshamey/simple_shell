@@ -20,7 +20,7 @@ char **stringtow(char *string, char *delimeter)
 	if (!delimeter)
 		delimeter = " ";
 	for (g = 0; string[g] != '\0'; g++)
-		if (is_delimeter(string[g], delimeter) &&
+		if (!is_delimeter(string[g], delimeter) &&
 				(is_delimeter(string[g + 1], delimeter) || !string[g + 1]))
 			wordsnumber++;
 	if (wordsnumber == 0)

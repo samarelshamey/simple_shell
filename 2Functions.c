@@ -63,22 +63,22 @@ int decimal_printing(int input, int fd)
 {
 	int (*__putchar)(char) = _putchar;
 	int g, count = 0;
-	unsigned int _abs, current;
+	unsigned int _abs_, current;
 
 	if (fd == STDERR_FILENO)
 		__putchar = _errputchar;
 	if (input < 0)
 	{
-		_abs = -input;
+		_abs_ = -input;
 		__putchar('-');
 		count++;
 	}
 	else
-		_abs = input;
-	current = _abs;
+		_abs_ = input;
+	current = _abs_;
 	for (g = 1000000000; g > 1; g /= 10)
 	{
-		if (_abs / g)
+		if (_abs_ / g)
 		{
 			__putchar('0' + current / g);
 			count++;

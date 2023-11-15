@@ -12,9 +12,9 @@
 int main(int argc, char **argv)
 {
 	int fd = 2;
-	info_type inf[] = {INFO_INITIATE};
+	info_type inf[] = {INFO_INITIATE };
 
-	asm("mov %1, %0\n\t"
+	asm ("mov %1, %0\n\t"
 			"add $3, %0"
 			: "=r" (fd)
 			: "r" (fd));
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 			if (errno == ENOENT)
 			{
 				_errputs(argv[0]);
-				_errputs(": 0: Can't open file ");
+				_errputs(": 0: Can't open ");
 				_errputs(argv[1]);
 				_errputchar('\n');
 				_errputchar(BUFF_FLUSH);

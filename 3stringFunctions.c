@@ -63,4 +63,3 @@ char *_strconcat(char *destination, char *source)
 	*destination = *source;
 	return (y);
 }
-
