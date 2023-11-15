@@ -11,7 +11,7 @@ int helpfunc(info_type *inf)
 	char **arr;
 
 	arr = inf->argv;
-	_puts("help call works. Function not yet implemented\n");
+	_puts("Function not yet executed\n");
 	if (0)
 		_puts(*arr);
 	return (0);

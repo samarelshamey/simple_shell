@@ -99,7 +99,7 @@ int mysetting_environ(info_type *inf)
 {
 	if (inf->argc != 3)
 	{
-		_errputs("Incorrect number of arguements\n");
+		_errputs("Invalid number of arguements\n");
 		return (1);
 	}
 	if (setting_environ(inf, inf->argv[1], inf->argv[2]))

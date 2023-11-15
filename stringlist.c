@@ -127,4 +127,3 @@ void freeing_list(list_type **ptr)
 	}
 	*ptr = NULL;
 }
-

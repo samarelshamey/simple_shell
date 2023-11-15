@@ -124,4 +124,3 @@ char *number_converting(long int n, int b, int f)
 		*--p = sign;
 	return (p);
 }
-
