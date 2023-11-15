@@ -95,7 +95,7 @@ typedef struct info
 
 #define INFO_INITIATE \
 {NULL, 0, NULL, 0, NULL, 0,\
-	        0, 0, 0, 0, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL}
+	0, 0, 0, 0, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL}
 
 /**
  * struct builtinStruct - builtin string and function
