@@ -28,7 +28,7 @@ void signal_handling(__attribute__((unused))int num)
 int _getline(info_type *inf, char **p, size_t *len)
 {
 	char *ptr = NULL, *newptr = NULL, *ch;
-	static char buffer[BUFF_SIZE];
+	static char buffer[BUFF_SIZE_R];
 	static size_t y, l;
 	ssize_t m = 0, n = 0;
 	size_t x;

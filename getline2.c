@@ -17,7 +17,7 @@ ssize_t buffer_reading(info_type *inf, char *buffer, size_t *size)
 
 	if (*size)
 		return (0);
-	i = read(inf->readfd, buffer, BUFF_SIZE);
+	i = read(inf->readfd, buffer, BUFF_SIZE_R);
 	if (i >= 0)
 		*size = i;
 	return (i);
