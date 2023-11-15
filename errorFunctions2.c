@@ -38,7 +38,7 @@ int fd_puts(char *s, int fd)
 
 	if (!s)
 		return (0);
-	while (s)
+	while (*s)
 	{
 		y += fd_put(*s, fd);
 	}

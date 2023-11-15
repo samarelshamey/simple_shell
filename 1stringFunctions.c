@@ -47,7 +47,7 @@ char *startwith(const char *word, const char *needle)
 */
 int _strcompare(char *s1, char *s2)
 {
-	while (s1 && s2)
+	while (*s1 && *s2)
 	{
 		if (*s1 != *s2)
 			return (*s1 - *s2);

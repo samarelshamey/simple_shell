@@ -66,7 +66,7 @@ int readhistory(info_type *inf)
 		if (buffer[y] == '\n')
 		{
 			buffer[y] = 0;
-			buildinghistory(inf, buffer + l, count);
+			buildinghistory(inf, buffer + l, count++);
 			l = y + 1;
 		}
 	if (l != y)

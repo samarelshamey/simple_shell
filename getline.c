@@ -50,7 +50,7 @@ int _getline(info_type *inf, char **p, size_t *len)
 	if (n)
 		_stringconcat(newptr, buffer + y, x - y);
 	else
-		_stringconcat(newptr, buffer + y, x - y + 1);
+		_stringcopy(newptr, buffer + y, x - y + 1);
 	n += x - y;
 	y = x;
 	ptr = newptr;

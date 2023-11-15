@@ -106,7 +106,7 @@ char *number_converting(long int n, int b, int f)
 	static char buff[50];
 	char sign = 0;
 	char *p;
-	unsigned long num;
+	unsigned long num = n;
 
 	if (!(f & UNSIGNED_CONVERT) && n < 0)
 	{

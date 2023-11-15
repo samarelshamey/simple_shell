@@ -52,8 +52,8 @@ int environ_list_occupy(info_type *inf)
 	list_type *node = NULL;
 	size_t y;
 
-	for (y = 0; inf->environ[y]; y++)
-		node_at_end(&node, inf->environ[y], 0);
+	for (y = 0; environ[y]; y++)
+		node_at_end(&node, environ[y], 0);
 	inf->env = node;
 	return (0);
 }

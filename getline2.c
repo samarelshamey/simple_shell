@@ -13,7 +13,7 @@
 */
 ssize_t buffer_reading(info_type *inf, char *buffer, size_t *size)
 {
-	ssize_t i;
+	ssize_t i = 0;
 
 	if (*size)
 		return (0);

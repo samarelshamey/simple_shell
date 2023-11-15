@@ -33,7 +33,7 @@ char **stringtow(char *string, char *delimeter)
 		while (is_delimeter(string[g], delimeter))
 			g++;
 		k = 0;
-		while (is_delimeter(string[g + k], delimeter) && string[g + k])
+		while (!is_delimeter(string[g + k], delimeter) && string[g + k])
 			k++;
 		s[h] = malloc((k + 1) * sizeof(char));
 		if (!s[h])
